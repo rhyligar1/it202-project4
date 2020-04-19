@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<title>Search</title>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="chart.html">Chart</a>
+                </li>
+                <li><a href="data.html">Data</a>
+                </li>                
+                <li><a href="search.html">Search</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Search</h1>
+
+<form method="get">
+    <h5>Type Countries Here</h5>
+  <input list="countries" name="country">
+  <ol id="countryList">
+    <datalist id="countries">
+        <option value="Canada">
+        <option value="Philippines">
+        <option value="Afghanistan">
+        <option value="China">
+        <option value="Japan">
+
+<!--      
+
+     <script>
+         var list = document.getElementById('countryList');
+         var newCountry = document.getElementById('usersCountry').value;
+         var entry = document.createElement('li');
+         entry.appendChild(document.createTextNode(usersCountry));
+         list.appendChild(entry);
+     </script>
+
+-->
+            
+    </datalist>
+  </ol>
+  <input type="button" onclick="alert('Countries Recieved! Proceed to the Charts page to see graphs.')" value="Submit">
+</form>
+
+    <br>
+    <br>
+    <h5> Was your country not listed? Type it below to add it to the graph.</h5>
+    <form>
+        <input list="usersCountry">
+        <input type="button" id="userCountry" onclick="alert('Country Added To Graph')" value="Add Country">
+    </form>
+
+</body>
+
+</html>

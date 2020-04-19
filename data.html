@@ -1,0 +1,106 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<title>Data</title>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="data.html">Data</a>
+                </li>
+                <li><a href="chart.html">Chart</a>
+                </li>
+                <li><a href="search.html">Search</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Data</h1>
+    
+<div id="covidData"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Confirmed</th>
+                <th>Recovered</th>
+                <th>Dead</th>
+            </tr>
+        </thead>
+      <tbody></tbody>
+    </table>
+<script>  
+ fetch("https://pomber.github.io/covid19/timeseries.json")
+  .then(response => response.json())
+  .then(data => {
+    data["Canada"].forEach(({ date, confirmed, recovered, deaths }) =>
+      console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+    );
+  });
+/*
+fetch("https://pomber.github.io/covid19/timeseries.json")
+  .then(response => response.json())
+  .then(afghanistanData => {
+    afghanistanData["Afghanistan"].forEach(({ date, confirmed, recovered, deaths }) =>
+      //console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+    );
+  });
+
+fetch("https://pomber.github.io/covid19/timeseries.json")
+  .then(response => response.json())
+  .then(phillipinesData => {
+    phillipinesData["Philippines"].forEach(({ date, confirmed, recovered, deaths }) =>
+      //console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+    );
+  });
+
+fetch("https://pomber.github.io/covid19/timeseries.json")
+  .then(response => response.json())
+  .then(chinaData => {
+    chinaData["China"].forEach(({ date, confirmed, recovered, deaths }) =>
+      //console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+    );
+  });
+    
+fetch("https://pomber.github.io/covid19/timeseries.json")
+  .then(response => response.json())
+  .then(japanData => {
+    japanData["Japan"].forEach(({ date, confirmed, recovered, deaths }) =>
+      //console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+    );
+  });
+  
+*/
+
+/* User Input Country
+
+fetch("https://pomber.github.io/covid19/timeseries.json")
+  .then(response => response.json())
+  .then(userCountryData => {
+    userCountryData["userCountry"].forEach(({ date, confirmed, recovered, deaths }) =>
+      console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+    );
+  });
+
+*/
+    
+// Looping through JSON 
+/*
+function appendData(data){
+    var mainContainer = document.getElementById("covidData");
+    for (var i = 0; i < canadaData.length; i++){
+        var div = document.createElement("div");
+        div.innerHTML = 'Date: ' + canadaData[i].date;
+        mainContainer.appendChild(div);
+    }
+}
+*/
+    </script>
+
+</body>
+
+</html>
